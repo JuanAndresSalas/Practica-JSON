@@ -31,15 +31,15 @@ function Estudiante(nombre, apellido) {
 
     };
 
-    this.getNombre = () => {return this.nombre};
+    this.getNombre = () => { return this.nombre };
 
-    this.getApellido = () => {return this.apellido};
-    
+    this.getApellido = () => { return this.apellido };
+
     this.getNacimiento = () => {
-        if(this.nacimiento){
+        if (this.nacimiento) {
             return this.nacimiento
-        }else{
-            if(this.edad){
+        } else {
+            if (this.edad) {
                 const hoy = new Date()
                 return hoy.getFullYear() - this.edad
             }
@@ -47,23 +47,23 @@ function Estudiante(nombre, apellido) {
         }
     };
     this.getHobbies = () => {
-        if(this.hobbies){
+        if (this.hobbies) {
             return this.hobbies
-        }else{
+        } else {
             return false
         }
     };
 
-    this.buscarHobbie = (hobbie) =>{
-        if(this.hobbies){
+    this.buscarHobbie = (hobbie) => {
+        if (this.hobbies) {
             let arreglo = this.hobbies
-            if(arreglo.indexOf(hobbie.toLowerCase(hobbie)) == -1){
+            if (arreglo.indexOf(hobbie.toLowerCase(hobbie)) == -1) {
                 return false
-            }else{
+            } else {
                 return true
             }
-            
-        }else{
+
+        } else {
             return false
         }
     }
