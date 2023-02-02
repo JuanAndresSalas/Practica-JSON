@@ -11,11 +11,11 @@ function Estudiante(nombre, apellido) {
 
     this.setNacimiento = (nacimiento) => { this.nacimiento = nacimiento; }
 
-    this.setHobbies = (hobbies) => { this.hobbies = hobbies; }
+    this.setHobbies = (hobbies) => { this.hobbies = hobbies; };
 
+    //Getters
     this.getEdad = function () {
         const hoy = new Date();
-        console.log(hoy.getFullYear());
         if (this.edad) {
             return this.edad
         }
@@ -29,6 +29,43 @@ function Estudiante(nombre, apellido) {
         }
 
 
+    };
+
+    this.getNombre = () => {return this.nombre};
+
+    this.getApellido = () => {return this.apellido};
+    
+    this.getNacimiento = () => {
+        if(this.nacimiento){
+            return this.nacimiento
+        }else{
+            if(this.edad){
+                const hoy = new Date()
+                return hoy.getFullYear() - this.edad
+            }
+            return false
+        }
+    };
+    this.getHobbies = () => {
+        if(this.hobbies){
+            return this.hobbies
+        }else{
+            return false
+        }
+    };
+
+    this.buscarHobbie = (hobbie) =>{
+        if(this.hobbies){
+            let arreglo = this.hobbies
+            if(arreglo.indexOf(hobbie.toLowerCase(hobbie)) == -1){
+                return false
+            }else{
+                return true
+            }
+            
+        }else{
+            return false
+        }
     }
 
 }
